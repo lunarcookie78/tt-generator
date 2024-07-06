@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../static/css/styles.css" />
+  <script src="../static/js/index.js" defer></script>
+  <title>TimeTable Generator</title>
+</head>
+
+<body>
+  <div id="main">
+    <img id="logo" src="../static/images/download.png" />
+    <h2>TIME-TABLE GENERATOR</h2>
+    <div class="grping-block" id="name-grp">
+      <label>Name:</label><input type="text" id="name" placeholder="ABC" />
+    </div>
+    <div class="grping-block" id="subject-grp">
+      <label>Subject:</label>
+      <input type="text" id="subject" placeholder="Eg.DBMS" />
+    </div>
+    <div class="grping-block" id="section">
+      <label>Section:</label>
+      <select>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+    </div>
+    <div class="grping-block" id="hours-grp">
+      <label>No. of hours weekly:</label>
+      <input type="number" id="hours" placeholder="Eg.8" />
+    </div>
+    <div class="grping-block" id="mailid">
+      <label>Email:</label>
+      <input type="email" id="email" />
+    </div>
+    <div class="grping-block" id="multsub-grp">
+      <label>Multiple subjects ?</label>
+      <input type="checkbox" id="multi-sub" />
+    </div>
+    <div id="sub-list">
+      <ul></ul>
+    </div>
+    <button type="button" id="generate-tt">Generate</button>
+  </div>
+</body>
+
+</html>
