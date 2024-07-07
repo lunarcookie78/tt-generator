@@ -168,33 +168,36 @@ def generate_tt(teacher_data):
         if master_tt_c["Fri"]["7"] != "":
             return "C Full"
     addn_subs = teacher_data[6]
-    subjects = [subject, *addn_subs.split(", ")]
+    if addn_subs:
+        subjects = [subject, *addn_subs.split(", ")]
+    else:
+        subjects = [subject]
     subidx = 0
     if section == "A":
         for day in master_tt_a.keys():
             for period in master_tt_a[day].keys():
                 if master_tt_a[day][period] == "" and subidx < len(subjects):
-                    master_tt_a[day][
-                        period
-                    ] = f"{subjects[subidx]} handled by {teacher_name}"
+                    master_tt_a[day][period] = f"{subjects[subidx]}"
+                    if "handled by" not in master_tt_a[day][period]:
+                        master_tt_a[day][period] += f" handled by {teacher_name}"
                     subidx += 1
         return "Success"
     if section == "B":
         for day in master_tt_b.keys():
             for period in master_tt_b[day].keys():
                 if master_tt_b[day][period] == "" and subidx < len(subjects):
-                    master_tt_b[day][
-                        period
-                    ] = f"{subjects[subidx]} handled by {teacher_name}"
+                    master_tt_b[day][period] = f"{subjects[subidx]}"
+                    if "handled by" not in master_tt_b[day][period]:
+                        master_tt_b[day][period] += f" handled by {teacher_name}"
                     subidx += 1
         return "Success"
     if section == "C":
         for day in master_tt_c.keys():
             for period in master_tt_c[day].keys():
                 if master_tt_c[day][period] == "" and subidx < len(subjects):
-                    master_tt_c[day][
-                        period
-                    ] = f"{subjects[subidx]} handled by {teacher_name}"
+                    master_tt_c[day][period] = f"{subjects[subidx]}"
+                    if "handled by" not in master_tt_c[day][period]:
+                        master_tt_c[day][period] += f" handled by {teacher_name}"
                     subidx += 1
         return "Success"
 

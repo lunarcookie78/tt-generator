@@ -80,5 +80,17 @@ h2 {
 }
 
 table {
-  border: 2px solid black;
+  margin: 0 auto; 
+  border-collapse: collapse; 
+}
+
+table, th, td {
+  border: 1px solid white; 
+}
+
+th, td {
+  color:white;
+  text-align: center;
+  vertical-align: middle; 
+  padding: 10px; 
 }
